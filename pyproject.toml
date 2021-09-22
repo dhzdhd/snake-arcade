@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "snake"
+version = "0.1.0"
+description = ""
+authors = ["dhzdhd"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+arcade = "^2.6.2"
+arcade-imgui = "^0.2.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+black = "^21.9b0"
+taskipy = "^1.8.2"
+pre-commit = "^2.15.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+game = { cmd = "python -m src", help = "Starts game"}
+lint = { cmd = "pre-commit run --all-files", help = "Lints project" }
+precommit = { cmd = "pre-commit install", help = "Installs the pre-commit git hook" }
+format = { cmd = "black --check .", help = "Runs the black python formatter" }
