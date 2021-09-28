@@ -20,7 +20,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.taskipy.tasks]
-game = { cmd = "python -m src", help = "Starts game"}
+game = { cmd = "python -m snake", help = "Starts game"}
 lint = { cmd = "pre-commit run --all-files", help = "Lints project" }
 precommit = { cmd = "pre-commit install", help = "Installs the pre-commit git hook" }
-format = { cmd = "black --check .", help = "Runs the black python formatter" }
+format = { cmd = "black snake/", help = "Runs the black python formatter" }
